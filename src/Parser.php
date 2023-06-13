@@ -121,13 +121,11 @@ class Parser
         }
 
         $name = $this->stream->curent()->content;
-        $this->stream->next();
         $args = [];
 
-        while ($this->stream->is(TokenKind::CurlyOpen)) {
-            $this->stream->next();
+        while ($this->stream->peek()?->kind === TokenKind::CurlyOpen) {
+            $this->stream->next(2);
             $args[] = $this->parse(TokenKind::CurlyClose);
-            $this->stream->next();
         }
 
         return new (match($name) {

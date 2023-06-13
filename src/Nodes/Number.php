@@ -10,8 +10,11 @@ class Number implements Node
 
     }
 
-    public function translate(): string
+    public function translate(): array 
     {
-        return '<mn>'.$this->number.'</mn>';
+        return [
+            'name' => 'mn',
+            'text' => $this->number,
+        ];
     }
 }

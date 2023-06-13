@@ -14,5 +14,7 @@
             "email": "tenmajkl@proton.me"
         }
     ],
-    "require": {}
+    "require": {
+        "erusev/parsedown": "^1.7"
+    }
 }

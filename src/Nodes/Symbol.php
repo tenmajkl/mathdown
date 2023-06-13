@@ -12,6 +12,9 @@ class Symbol implements Node
 
     public function translate(): string
     {
-        return '<mo>'.$this->symbol.'</mo>';
+        return [
+            'name' => 'mo',
+            'text' => $this->symbol,
+        ];    
     }
 }
