@@ -2,7 +2,7 @@
     "name": "majkel/mathdown",
     "description": "Parsedown extension that translates LaTeX math into html",
     "type": "library",
-    "license": "GPL 3.0",
+    "license": "GPL-3.0-or-later",
     "autoload": {
         "psr-4": {
             "Majkel\\Mathdown\\": "src/"
