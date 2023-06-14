@@ -131,6 +131,7 @@ class Parser
         return new (match($name) {
             'dfrac', 'frac' => Macros\Dfrac::class,
             'sqrt' => Macros\SquareRoot::class,
+            'neq' => Macros\Neq::class,
             default => throw new ParseError('Unexpected token')    
         })(...$args);
     }

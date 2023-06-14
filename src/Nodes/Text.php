@@ -12,9 +12,6 @@ class Text implements Node
 
     public function translate(): string
     {
-        return [
-            'name' => 'mi',
-            'text' => $this->content,
-        ];
+        return '<mi>'.$this->content.'</mi>';
     }
 }

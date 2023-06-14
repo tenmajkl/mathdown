@@ -4,5 +4,5 @@ namespace Majkel\Mathdown\Nodes;
 
 interface Node
 {
-    public function translate(): array;
+    public function translate(): string;
 }

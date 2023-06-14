@@ -31,7 +31,7 @@ class Mathdown extends Parsedown
             'extent' => strlen($matches[0]),
             'element' => [
                 'name' => 'math',
-                'text' => $html,
+                'rawHtml' => $html,
             ],
         ];
     }
