@@ -21,8 +21,9 @@ echo $md->text('Frequency: $f = \dfrac{1}{T}$');
 
 ## Todo
 
-- [ ] add greek letters
+- [x] add greek letters
 - [ ] add better errors
+- [ ] write unit tests
 
 ## Contributing
 

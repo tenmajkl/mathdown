@@ -7,6 +7,7 @@ use Majkel\Mathdown\Nodes\Group;
 use Majkel\Mathdown\Nodes\Index;
 use Majkel\Mathdown\Nodes\Infix;
 use Majkel\Mathdown\Nodes\Macros;
+use Majkel\Mathdown\Nodes\Macros\Greek;
 use Majkel\Mathdown\Nodes\Node;
 use Majkel\Mathdown\Nodes\Number;
 use Majkel\Mathdown\Nodes\Symbol;
@@ -121,6 +122,11 @@ class Parser
         }
 
         $name = $this->stream->curent()->content;
+
+        if (in_array($name, Macros\Greek::Possible)) {
+            return new Greek($name);
+        }
+
         $args = [];
 
         while ($this->stream->peek()?->kind === TokenKind::CurlyOpen) {
@@ -132,7 +138,7 @@ class Parser
             'dfrac', 'frac' => Macros\Dfrac::class,
             'sqrt' => Macros\SquareRoot::class,
             'neq' => Macros\Neq::class,
-            default => throw new ParseError('Unexpected token')    
+            default => throw new ParseError('Unknown macro') ,   
         })(...$args);
     }
 }
