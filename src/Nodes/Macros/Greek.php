@@ -56,6 +56,6 @@ class Greek implements Node, Macro
 
     public function translate(): string
     {
-        return '<mo>&'.$this->letter.'</mo>';
+        return '<mo>&'.$this->letter.';</mo>';
     }
 }
