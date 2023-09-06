@@ -32,7 +32,9 @@ class Parser
                 $node->right = $this->parseFragment();
                 $stack->push($node);
                 $this->stream->next();
-                continue;
+                if ($this->stream->curent()?->kind === $end) {
+                    break;
+                }
             }
             $stack->push($this->parseFragment());
             $this->stream->next();
