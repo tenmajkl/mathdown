@@ -107,7 +107,7 @@ class Parser
             return null;
         }
 
-        return new Infix();
+        return new Index();
     }
 
     public function parseMacro(): ?Macros\Macro
