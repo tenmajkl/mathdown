@@ -5,8 +5,8 @@ namespace Majkel\Mathdown\Nodes;
 class Index implements Node, Infix
 {
     public function __construct(
-        public readonly Node $left = null,
-        public readonly Node $right = null,
+        public readonly ?Node $left = null,
+        public readonly ?Node $right = null,
     ) {
 
     }
