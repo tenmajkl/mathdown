@@ -13,7 +13,7 @@ class Lexer
         |(?<NUMBER>[0-9]+)
         |(?<UNDERSCORE>_)
         |(?<CARET>\^)
-        |(?<SYMBOL>\+|\-|\*|\/|=)
+        |(?<SYMBOL>\+|\-|\*|\/|=|\[|\]|\|)
         |(?<WHITESPACE>\s+)
         |(?<TEXT>[a-zA-Z]+)
         |(?<ERROR>.+)
