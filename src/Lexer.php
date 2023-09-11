@@ -10,7 +10,7 @@ class Lexer
         |(?<CLOSE>\))
         |(?<CURLY_OPEN>\{)
         |(?<CURLY_CLOSE>\})
-        |(?<NUMBER>[0-9]+)
+        |(?<NUMBER>-?[0-9,\.]+)
         |(?<UNDERSCORE>_)
         |(?<CARET>\^)
         |(?<SYMBOL>\+|\-|\*|\/|=|\[|\]|\|)
