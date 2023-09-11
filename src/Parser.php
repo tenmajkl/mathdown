@@ -16,6 +16,12 @@ use ParseError;
 
 class Parser
 {
+    public const ReplaceMacros = [
+        'neq' => '&ne;',
+        'rightarrow' => '&rarr;',
+        'leftarrow' => '&larr;',
+    ];
+
     public function __construct(
         public readonly TokenStream $stream
     ) {
@@ -136,10 +142,13 @@ class Parser
             $args[] = $this->parse(TokenKind::CurlyClose);
         }
 
+        if (isset(self::ReplaceMacros[$name])) {
+            return new Macros\Replace(self::ReplaceMacros[$name]);
+        }
+
         return new (match($name) {
             'dfrac', 'frac' => Macros\Dfrac::class,
             'sqrt' => Macros\SquareRoot::class,
-            'neq' => Macros\Neq::class,
             default => throw new ParseError('Unknown macro') ,   
         })(...$args);
     }
